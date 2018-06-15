@@ -1,0 +1,36 @@
+{
+  "name": "codegen-vs-preval-vs-macros",
+  "description": "A comparison of the babel plugins codegen, preval, and macros",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "npm run codegen && npm run preval && npm run macros",
+    "preval": "cd src/babel-plugin-preval && babel --plugins babel-plugin-preval index.js comment.js --out-dir ../../dist/babel-plugin-preval",
+    "codegen": "cd src/babel-plugin-codegen && babel --plugins babel-plugin-codegen index.js comment.js --out-dir ../../dist/babel-plugin-codegen",
+    "macros": "cd src/babel-plugin-macros && babel --plugins babel-plugin-macros index.js --out-dir ../../dist/babel-plugin-macros"
+  },
+  "keywords": [],
+  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-codegen": "^2.0.0",
+    "babel-plugin-macros": "^2.2.2",
+    "babel-plugin-preval": "^1.6.4",
+    "codegen.macro": "^2.0.0",
+    "glob": "^7.1.2",
+    "preval.macro": "^1.0.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kentcdodds/codegen-vs-preval-vs-macros.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kentcdodds/codegen-vs-preval-vs-macros/issues"
+  },
+  "homepage": "https://github.com/kentcdodds/codegen-vs-preval-vs-macros#readme"
+}
